@@ -81,7 +81,7 @@ jobs:
           
           - os: windows-latest
             name: windows
-            arch: x86
+            arch: ia32
             lib_name: v8_monolith.lib
           
 #           - os: macOS-latest
@@ -140,9 +140,9 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType directory -Path ./out/
-          Copy-Item -Path ./v8/out.gn/x64.release/obj/${{ matrix.config.lib_name }} -Destination ./out/${{ matrix.config.name }}_${{ matrix.config.arch }}_${{ matrix.config.lib_name }}
-          If ($IsLinux -or $IsMacOS) { Copy-Item -Path ./v8/out.gn/x64.release/d8 -Destination ./out/${{ matrix.config.name }}_${{ matrix.config.arch }}_d8 }
-          If ($IsWindows) { Copy-Item -Path ./v8/out.gn/x64.release/d8.exe -Destination ./out/${{ matrix.config.name }}_${{ matrix.config.arch }}_d8.exe }
+          Copy-Item -Path ./v8/out.gn/ia32.release/obj/${{ matrix.config.lib_name }} -Destination ./out/${{ matrix.config.name }}_${{ matrix.config.arch }}_${{ matrix.config.lib_name }}
+          If ($IsLinux -or $IsMacOS) { Copy-Item -Path ./v8/out.gn/ia32.release/d8 -Destination ./out/${{ matrix.config.name }}_${{ matrix.config.arch }}_d8 }
+          If ($IsWindows) { Copy-Item -Path ./v8/out.gn/ia32.release/d8.exe -Destination ./out/${{ matrix.config.name }}_${{ matrix.config.arch }}_d8.exe }
       
       - name: Release monolithic V8 lib & d8
         uses: softprops/action-gh-release@v1
