@@ -74,14 +74,14 @@ jobs:
       matrix:
         config:
 
-          - os: ubuntu-latest
-            name: linux
-            arch: x64
-            lib_name: libv8_monolith.a
+          # - os: ubuntu-latest
+          #   name: linux
+          #   arch: x64
+          #   lib_name: libv8_monolith.a
           
           - os: windows-latest
             name: windows
-            arch: x64
+            arch: x86
             lib_name: v8_monolith.lib
           
 #           - os: macOS-latest
