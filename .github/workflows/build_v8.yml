@@ -79,9 +79,14 @@ jobs:
           #   arch: x64
           #   lib_name: libv8_monolith.a
           
+          # - os: windows-latest
+          #   name: windows
+          #   arch: ia32
+          #   lib_name: v8_monolith.lib
+
           - os: windows-latest
             name: windows
-            arch: ia32
+            arch: x64
             lib_name: v8_monolith.lib
           
 #           - os: macOS-latest
